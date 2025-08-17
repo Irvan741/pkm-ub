@@ -70,7 +70,6 @@
       background-color: var(--green-primary);
       color: white;
       padding: 1rem;
-      margin-top: 4rem;
       border-top-left-radius: 1rem;
       border-top-right-radius: 1rem;
     }
@@ -78,6 +77,26 @@
     a.text-decoration-none:hover {
       text-decoration: none;
     }
+
+    .akses-cepat-section {
+      position: relative;
+      background: url("/batik.png") repeat;
+      background-size: cover;
+    }
+
+    .akses-cepat-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(179, 214, 198, 0.85); /* green-accent transparan */
+      z-index: 0;
+    }
+
+    .akses-cepat-section .container {
+      position: relative;
+      z-index: 1; /* biar konten di atas overlay */
+    }
+
   </style>
 </head>
 <body>
@@ -133,39 +152,59 @@
       </div>
     </div>
 
-  <!-- Akses Cepat -->
-  <div class="container my-5">
-    <h2 class="text-center section-title mb-4" data-aos="fade-up">Akses Cepat</h2>
-    <div class="row g-4 justify-content-center">
+    <!-- Akses Cepat -->
+  {{-- <!-- Wave Atas -->
+    <div class="wave-top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#B3D6C6" fill-opacity="1" d="M0,192L40,202.7C80,213,160,235,240,218.7C320,203,400,149,480,160C560,171,640,245,720,245.3C800,245,880,171,960,160C1040,149,1120,203,1200,224C1280,245,1360,235,1400,229.3L1440,224L1440,0L0,0Z"></path>
+      </svg>
+    </div> --}}
 
-      <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
-        <a href="{{ url('/stunting') }}" class="text-decoration-none">
-          <div class="nav-card text-center">
-            <h5>Informasi Stunting</h5>
-            <p>Pahami pencegahan stunting untuk tumbuh kembang anak yang sehat.</p>
-          </div>
-        </a>
-      </div>
+    <!-- Section Akses Cepat -->
+    <div class="akses-cepat-section">
+      <div class="container py-5">
+        <h2 class="text-center section-title mb-4" data-aos="fade-up">Akses Cepat</h2>
+        <div class="row g-4 justify-content-center">
 
-      <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
-        <a href="{{ url('/isu-kesehatan') }}" class="text-decoration-none">
-          <div class="nav-card text-center">
-            <h5>Isu Kesehatan Lainnya</h5>
-            <p>Update isu kesehatan terbaru untuk warga Desa Ujoh Bilang.</p>
+          <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+            <a href="{{ url('/stunting') }}" class="text-decoration-none">
+              <div class="nav-card text-center">
+                <h5>Informasi Stunting</h5>
+                <p>Pahami pencegahan stunting untuk tumbuh kembang anak yang sehat.</p>
+              </div>
+            </a>
           </div>
-        </a>
-      </div>
 
-      <div class="col-md-4" data-aos="flip-left" data-aos-delay="300">
-        <a href="{{ url('/kritik-saran') }}" class="text-decoration-none">
-          <div class="nav-card text-center">
-            <h5>Kritik & Saran</h5>
-            <p>Silahkan Masukkan Kritik dan Saran anda atas layanan Kami.</p>
+          <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+            <a href="{{ url('/isu-kesehatan') }}" class="text-decoration-none">
+              <div class="nav-card text-center">
+                <h5>Isu Kesehatan Lainnya</h5>
+                <p>Update isu kesehatan terbaru untuk warga Desa Ujoh Bilang.</p>
+              </div>
+            </a>
           </div>
-        </a>
+
+          <div class="col-md-4" data-aos="flip-left" data-aos-delay="300">
+            <a href="{{ url('/kritik-saran') }}" class="text-decoration-none">
+              <div class="nav-card text-center">
+                <h5>Kritik & Saran</h5>
+                <p>Silahkan Masukkan Kritik dan Saran anda atas layanan Kami.</p>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- Wave Bawah -->
+    {{-- <div class="wave-bottom">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#B3D6C6" fill-opacity="1" d="M0,64L48,74.7C96,85,192,107,288,138.7C384,171,480,213,576,202.7C672,192,768,128,864,112C960,96,1056,128,1152,160C1248,192,1344,224,1392,240L1440,256L1440,320L0,320Z"></path>
+      </svg>
+    </div> --}}
+
+
+
 
   <footer class="text-center" data-aos="fade-up">
     &copy; {{ date('Y') }} Puskesmas Ujoh Bilang • KKN 51
