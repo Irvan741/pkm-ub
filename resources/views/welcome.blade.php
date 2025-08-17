@@ -142,7 +142,7 @@
     <!-- Hero Carousel -->
     <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active" data-aos="fade-up">
+        <div class="carousel-item active">
           <img src="{{ asset('hero1.jpg') }}" class="d-block w-100" alt="Slide 1">
           <div class="carousel-caption d-none d-md-block">
             <h2 class="fw-bold">Selamat Datang di Website Resmi Puskesmas Ujoh Bilang</h2>
