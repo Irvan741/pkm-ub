@@ -82,7 +82,7 @@
       <h2 class="section-title text-center">Sambutan Kepala Puskesmas</h2>
       <div class="card shadow-sm border-0 p-4 text-center">
         @if($kepala)
-          <img src="{{ $kepala->image_path ? asset('storage/'.$kepala->image_path) : 'https://via.placeholder.com/150' }}" 
+          <img src="{{ $kepala->image_path ?  '/'.$kepala->image_path : 'https://via.placeholder.com/150' }}" 
               alt="Kepala Puskesmas" 
               class="rounded-circle mx-auto mb-3" 
               width="150" height="150">
