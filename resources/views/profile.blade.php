@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profil - Puskesmas Ujoh Bilang</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
   <style>
     :root {
       --green-primary: #256D4A;
@@ -70,7 +74,7 @@
   </nav>
 
   <!-- Hero -->
-  <div class="hero">
+  <div class="hero" data-aos="fade-up" data-aos-duration="1000">
     <h1 class="fw-bold">Profil Puskesmas Ujoh Bilang</h1>
     <p>Mengenal lebih dekat tentang visi, misi, dan layanan Puskesmas.</p>
   </div>
@@ -78,7 +82,7 @@
   <div class="container my-5">
 
     <!-- Sambutan -->
-    <section class="mb-5">
+    <section class="mb-5" data-aos="fade-up" data-aos-duration="1000">
       <h2 class="section-title text-center">Sambutan Kepala Puskesmas</h2>
       <div class="card shadow-sm border-0 p-4 text-center">
         @if($kepala)
@@ -99,7 +103,7 @@
     </section>
 
     <!-- Tupoksi -->
-    <section class="mb-5">
+    <section class="mb-5" data-aos="fade-right" data-aos-duration="1000">
       <h2 class="section-title">Tugas Pokok & Fungsi (Tupoksi)</h2>
       <div class="card shadow-sm border-0 p-4">
         @if($profile)
@@ -111,16 +115,16 @@
     </section>
 
     <!-- Visi & Misi -->
-    <section class="mb-5">
+    <section class="mb-5" data-aos="fade-left" data-aos-duration="1000">
       <h2 class="section-title">Visi & Misi</h2>
       <div class="row g-4">
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
           <div class="card shadow-sm border-0 p-4 h-100">
             <h5 class="fw-bold">Visi</h5>
             <p>{!! $profile ? $profile->visi : 'Belum ada data visi.' !!}</p>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
           <div class="card shadow-sm border-0 p-4 h-100">
             <h5 class="fw-bold">Misi</h5>
             @if($profile)
@@ -138,7 +142,7 @@
       <h2 class="section-title text-center">Personil Puskesmas</h2>
       <div class="row g-4 justify-content-center">
         @forelse($personil as $p)
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-3 col-sm-6" data-aos="flip-left" data-aos-duration="1000">
             <div class="card shadow-sm border-0 h-100 text-center p-3">
               <img src="{{ $p->image_path ? '/'.$p->image_path : 'https://via.placeholder.com/100' }}" 
                    class="rounded-circle mx-auto mb-3" 
@@ -160,5 +164,10 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

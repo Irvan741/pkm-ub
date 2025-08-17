@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Puskesmas Ujoh Bilang</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <style>
     :root {
       --green-primary: #256D4A;
@@ -78,7 +82,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-white border-bottom">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom" data-aos="fade-down">
       <div class="container">
         <!-- Brand -->
         <a class="navbar-brand fw-semibold text-success d-flex align-items-center" href="{{ url('/') }}">
@@ -86,7 +90,6 @@
           <img src="{{ asset('puskesmas.png') }}" alt="Logo Puskesmas" height="40" class="me-1">
           <span class="ms-2 fs-6">Puskesmas Ujoh Bilang</span>
         </a>
-
 
         <!-- Toggle button (mobile) -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
@@ -120,31 +123,22 @@
     <!-- Hero Carousel -->
     <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-item active" data-aos="fade-up">
           <img src="{{ asset('hero1.jpg') }}" class="d-block w-100" alt="Slide 1">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-none d-md-block" data-aos="zoom-in" data-aos-delay="300">
             <h2 class="fw-bold">Selamat Datang di Website Resmi Puskesmas Ujoh Bilang</h2>
             <p>Menyediakan layanan kesehatan, informasi, dan edukasi untuk masyarakat.</p>
           </div>
-
         </div>
       </div>
     </div>
 
   <!-- Akses Cepat -->
   <div class="container my-5">
-    <h2 class="text-center section-title mb-4">Akses Cepat</h2>
+    <h2 class="text-center section-title mb-4" data-aos="fade-up">Akses Cepat</h2>
     <div class="row g-4 justify-content-center">
-      {{-- <div class="col-md-4">
-        <a href="{{ url('/pendaftaran') }}" class="text-decoration-none">
-          <div class="nav-card text-center">
-            <h5>Pendaftaran Pasien</h5>
-            <p>Daftarkan diri Anda secara mudah untuk mendapatkan pelayanan kesehatan.</p>
-          </div>
-        </a>
-      </div> --}}
 
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
         <a href="{{ url('/stunting') }}" class="text-decoration-none">
           <div class="nav-card text-center">
             <h5>Informasi Stunting</h5>
@@ -153,7 +147,7 @@
         </a>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
         <a href="{{ url('/isu-kesehatan') }}" class="text-decoration-none">
           <div class="nav-card text-center">
             <h5>Isu Kesehatan Lainnya</h5>
@@ -162,7 +156,7 @@
         </a>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="300">
         <a href="{{ url('/kritik-saran') }}" class="text-decoration-none">
           <div class="nav-card text-center">
             <h5>Kritik & Saran</h5>
@@ -173,10 +167,18 @@
     </div>
   </div>
 
-  <footer class="text-center">
+  <footer class="text-center" data-aos="fade-up">
     &copy; {{ date('Y') }} Puskesmas Ujoh Bilang • KKN 51
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000, // durasi animasi (ms)
+      once: true,     // animasi hanya jalan sekali
+    });
+  </script>
 </body>
 </html>
