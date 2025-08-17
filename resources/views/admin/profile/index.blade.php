@@ -26,7 +26,7 @@
                 <div class="col-md-3 text-center">
                     <div class="border rounded-4 p-2">
                         <img
-                            src="/storage/{{ $kepala ?  '/'.$kepala->image_path :'' }}"
+                            src="{{ $kepala ?  '/'.$kepala->image_path :'' }}"
                             alt="Foto Kepala Puskesmas"
                             class="img-fluid rounded-4"
                             style="max-height: 240px; object-fit: cover;"
