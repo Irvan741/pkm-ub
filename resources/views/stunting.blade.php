@@ -4,46 +4,59 @@
 <div class="container py-4">
 
     {{-- Logo Desa --}}
-    <div class="text-center mb-4">
-        <img src="{{ asset('/logo.png') }}" alt="Logo Desa Ujoh Bilang" class="img-fluid" style="max-height: 120px;">
+    <div class="text-center mb-4" data-aos="fade-down">
+        <img src="{{ asset('/kabupaten.png') }}" alt="Logo Desa Ujoh Bilang" class="img-fluid" style="max-height: 120px;">
         <h2 class="mt-2">Informasi Stunting</h2>
         <p class="text-muted">Desa Ujoh Bilang</p>
     </div>
 
     {{-- Gambar Ilustrasi --}}
-    <div class="text-center mb-4">
+    <div class="text-center mb-4" data-aos="zoom-in" data-aos-delay="200">
         <img src="/assets/stunt.png" alt="Ilustrasi Stunting" class="img-fluid rounded shadow">
     </div>
 
     {{-- Konten Informasi --}}
-    <div class="card shadow-sm border-0">
+    <div class="card shadow-sm border-0" data-aos="fade-up" data-aos-duration="1000">
         <div class="card-body">
-            <h5 class="card-title">Apa itu Stunting?</h5>
-            <p class="card-text">
+            <h5 class="card-title" data-aos="fade-right">Apa itu Stunting?</h5>
+            <p class="card-text" data-aos="fade-up" data-aos-delay="100">
                 Stunting adalah kondisi gagal tumbuh pada anak balita akibat kekurangan gizi kronis, terutama dalam 1000 hari pertama kehidupan (HPK). Anak yang mengalami stunting memiliki tinggi badan yang lebih rendah dibandingkan anak seusianya dan dapat berdampak pada perkembangan otak serta produktivitas di masa depan.
             </p>
 
-            <h5 class="card-title mt-4">Penyebab Stunting</h5>
-            <ul>
+            <h5 class="card-title mt-4" data-aos="fade-right" data-aos-delay="200">Penyebab Stunting</h5>
+            <ul data-aos="fade-up" data-aos-delay="300">
                 <li>Kekurangan asupan gizi pada ibu hamil dan anak</li>
                 <li>Kurangnya akses terhadap sanitasi dan air bersih</li>
                 <li>Pola asuh yang kurang tepat</li>
                 <li>Kurangnya pengetahuan tentang gizi</li>
             </ul>
 
-            <h5 class="card-title mt-4">Pencegahan Stunting</h5>
-            <ul>
+            <h5 class="card-title mt-4" data-aos="fade-right" data-aos-delay="400">Pencegahan Stunting</h5>
+            <ul data-aos="fade-up" data-aos-delay="500">
                 <li>Pemenuhan gizi ibu hamil dan anak</li>
                 <li>Imunisasi dan pemeriksaan kesehatan rutin</li>
                 <li>Sanitasi lingkungan yang bersih</li>
                 <li>Pemberian ASI eksklusif dan MPASI bergizi</li>
             </ul>
 
-            <div class="alert alert-info mt-4" role="alert">
+            <div class="alert alert-info mt-4" role="alert" data-aos="zoom-in" data-aos-delay="600">
                 Mari bersama cegah stunting demi masa depan anak-anak Desa Ujoh Bilang yang lebih sehat dan cerdas!
             </div>
         </div>
     </div>
 
 </div>
+
+{{-- Aktifkan AOS --}}
+@push('scripts')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 800,
+    easing: 'ease-in-out'
+  });
+</script>
+@endpush
 @endsection

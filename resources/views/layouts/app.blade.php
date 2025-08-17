@@ -9,12 +9,40 @@
 </head>
 <body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom" data-aos="fade-down">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="/">
-                <img src="{{ asset('logo.png') }}" alt="Logo" height="40" class="me-2">
-                <strong>Desa Ujoh Bilang</strong>
-            </a>
+          <!-- Brand -->
+          <a class="navbar-brand fw-semibold text-success d-flex align-items-center" href="{{ url('/') }}">
+            <img src="{{ asset('kabupaten.png') }}" alt="Logo Kabupaten" height="40" class="me-1">
+            <img src="{{ asset('puskesmas.png') }}" alt="Logo Puskesmas" height="40" class="me-1">
+            <span class="ms-2 fs-6">Puskesmas Ujoh Bilang</span>
+          </a>
+  
+          <!-- Toggle button (mobile) -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/profile') }}">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/agenda') }}">Agenda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/isu-kesehatan') }}">Informasi & Berita</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/survey-kepuasan') }}">Survey</a>
+              </li>
+            </ul>
+            <div class="ms-lg-3">
+              <a href="{{ route('login') }}" class="btn btn-outline-success">Login</a>
+            </div>
+          </div>
         </div>
     </nav>
 
@@ -32,5 +60,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/admin/script.js"></script>
+    @stack('scripts')
 </body>
 </html>
