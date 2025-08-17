@@ -88,12 +88,12 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::delete('/feedback/{id}', [FeedbackController::class, 'destroy'])->name('admin.feedback.destroy');
 
     
-    Route::get('/kartu-keluarga', [KartuKeluargaController::class, 'index'])->name('admin.kartu-keluarga.index');
-    Route::get('/kartu-keluarga/create', [KartuKeluargaController::class, 'create'])->name('admin.kartu-keluarga.create');
-    Route::post('/kartu-keluarga', [KartuKeluargaController::class, 'store'])->name('admin.kartu-keluarga.store');
-    Route::get('/kartu-keluarga/{id}', [KartuKeluargaController::class, 'edit'])->name('admin.kartu-keluarga.edit');
-    Route::put('/kartu-keluarga/{id}', [KartuKeluargaController::class, 'update'])->name('admin.kartu-keluarga.update');
-    Route::delete('/kartu-keluarga/{id}', [KartuKeluargaController::class, 'destroy'])->name('admin.kartu-keluarga.destroy');
+    // Route::get('/kartu-keluarga', [KartuKeluargaController::class, 'index'])->name('admin.kartu-keluarga.index');
+    // Route::get('/kartu-keluarga/create', [KartuKeluargaController::class, 'create'])->name('admin.kartu-keluarga.create');
+    // Route::post('/kartu-keluarga', [KartuKeluargaController::class, 'store'])->name('admin.kartu-keluarga.store');
+    // Route::get('/kartu-keluarga/{id}', [KartuKeluargaController::class, 'edit'])->name('admin.kartu-keluarga.edit');
+    // Route::put('/kartu-keluarga/{id}', [KartuKeluargaController::class, 'update'])->name('admin.kartu-keluarga.update');
+    // Route::delete('/kartu-keluarga/{id}', [KartuKeluargaController::class, 'destroy'])->name('admin.kartu-keluarga.destroy');
 
     Route::get('/pasien', [PasienController::class, 'index'])->name('admin.pasien.index');
     Route::get('/pasien/create', [PasienController::class, 'create'])->name('admin.pasien.create');

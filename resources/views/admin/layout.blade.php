@@ -100,9 +100,9 @@
         <a href="{{ route('admin.user-role.index') }}" class="{{ request()->routeIs('admin.user-role.*') ? 'active' : '' }}">
           <i class="bi bi-people"></i><span>Account Manager</span>
         </a>
-        <a href="{{ route('admin.kartu-keluarga.index') }}" class="{{ request()->routeIs('admin.kartu-keluarga.*') ? 'active' : '' }}">
+        {{-- <a href="{{ route('admin.kartu-keluarga.index') }}" class="{{ request()->routeIs('admin.kartu-keluarga.*') ? 'active' : '' }}">
           <i class="bi bi-card-list"></i><span>Kartu Keluarga</span>
-        </a>
+        </a> --}}
         <a href="{{ route('admin.agenda.index') }}" class="{{ request()->routeIs('admin.agenda.*') ? 'active' : '' }}">
           <i class="bi bi-calendar-event"></i><span>Agenda</span>
         </a>
@@ -126,9 +126,9 @@
       <a href="{{ route('admin.user-role.index') }}" class="{{ request()->routeIs('admin.user-role.*') ? 'active' : '' }}">
         <i class="bi bi-people"></i><span>Account Manager</span>
       </a>
-      <a href="{{ route('admin.kartu-keluarga.index') }}" class="{{ request()->routeIs('admin.kartu-keluarga.*') ? 'active' : '' }}">
+      {{-- <a href="{{ route('admin.kartu-keluarga.index') }}" class="{{ request()->routeIs('admin.kartu-keluarga.*') ? 'active' : '' }}">
         <i class="bi bi-card-list"></i><span>Kartu Keluarga</span>
-      </a>
+      </a> --}}
       <a href="{{ route('admin.agenda.index') }}" class="{{ request()->routeIs('admin.agenda.*') ? 'active' : '' }}">
         <i class="bi bi-calendar-event"></i><span>Agenda</span>
       </a>
