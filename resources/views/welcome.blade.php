@@ -144,10 +144,11 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="{{ asset('hero1.jpg') }}" class="d-block w-100" alt="Slide 1">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-block">
             <h2 class="fw-bold">Selamat Datang di Website Resmi Puskesmas Ujoh Bilang</h2>
             <p>Menyediakan layanan kesehatan, informasi, dan edukasi untuk masyarakat.</p>
           </div>
+          
         </div>
       </div>
     </div>
