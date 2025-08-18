@@ -11,6 +11,7 @@ use App\Http\Controllers\IndexControllerTamu;
 use App\Http\Controllers\KritikSaranController;
 use App\Http\Controllers\RegistController;
 use App\Http\Controllers\Admin\FeedbackController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\AgendaController;
 
@@ -54,12 +55,16 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/kontak-kami', [IndexControllerTamu::class, 'kontak']);
 
 // Prefix admin
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('agenda', AgendaController::class, [
         'as' => 'admin' // supaya jadi admin.agenda.index dst
     ]);
+        Route::get('/kontak-kami', [ContactController::class, 'index'])->name('admin.contact.index');
+        Route::post('/kontak-kami', [ContactController::class, 'update'])->name('admin.contact.update');
+  
     Route::get('/', [IndexController::class, 'index'])->name('admin.index');
     
     Route::get('/profil', [ProfileController::class, 'index'])->name('admin.profile.index');

@@ -38,6 +38,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('/survey-kepuasan') }}">Survey</a>
               </li>
+
+            <li class="nav-item"><a href="{{ url('/kontak-kami') }}" class="nav-link">Kontak Kami</a></li>
             </ul>
             <div class="ms-lg-3">
               <a href="{{ route('login') }}" class="btn btn-outline-success">Login</a>

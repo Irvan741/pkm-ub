@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil - Puskesmas Ujoh Bilang</title>
+  <title>Kontak Kami - Puskesmas Ujoh Bilang</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <!-- AOS CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
@@ -45,6 +48,17 @@
       border-top-right-radius: 1rem;
       text-align: center;
     }
+    .contact-card {
+      transition: transform 0.3s ease;
+    }
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+    .contact-icon {
+      font-size: 2.2rem;
+      color: var(--green-primary);
+      margin-bottom: .75rem;
+    }
   </style>
 </head>
 <body>
@@ -61,12 +75,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a href="{{ url('/profile') }}" class="nav-link active">Profil</a></li>
+          <li class="nav-item"><a href="{{ url('/profile') }}" class="nav-link">Profil</a></li>
           <li class="nav-item"><a href="{{ url('/agenda') }}" class="nav-link">Agenda</a></li>
           <li class="nav-item"><a href="{{ url('/berita') }}" class="nav-link">Informasi & Berita</a></li>
           <li class="nav-item"><a href="{{ url('/survey') }}" class="nav-link">Survey Kepuasan</a></li>
-
-          <li class="nav-item"><a href="{{ url('/kontak-kami') }}" class="nav-link">Kontak Kami</a></li>
+          <li class="nav-item"><a href="{{ url('/kontak-kami') }}" class="nav-link active">Kontak Kami</a></li>
         </ul>
         <div class="ms-lg-3 mt-2 mt-lg-0">
           <a href="{{ route('login') }}" class="btn btn-outline-success">Login</a>
@@ -77,88 +90,65 @@
 
   <!-- Hero -->
   <div class="hero" data-aos="fade-up" data-aos-duration="1000">
-    <h1 class="fw-bold">Profil Puskesmas Ujoh Bilang</h1>
-    <p>Mengenal lebih dekat tentang visi, misi, dan layanan Puskesmas.</p>
+    <h1 class="fw-bold">Kontak Kami</h1>
+    <p>Hubungi Puskesmas Ujoh Bilang melalui informasi berikut.</p>
   </div>
 
   <div class="container my-5">
 
-    <!-- Sambutan -->
+    <!-- Contact Information -->
     <section class="mb-5" data-aos="fade-up" data-aos-duration="1000">
-      <h2 class="section-title text-center">Sambutan Kepala Puskesmas</h2>
-      <div class="card shadow-sm border-0 p-4 text-center">
-        @if($kepala)
-          <img src="{{ $kepala->image_path ?  '/'.$kepala->image_path : 'https://via.placeholder.com/150' }}" 
-              alt="Kepala Puskesmas" 
-              class="rounded-circle mx-auto mb-3" 
-              width="150" height="150">
-
-          <p class="mb-3">{!!$kepala->sambutan !!}</p>
-
-          <p class="fw-semibold mt-3 mb-0">Hormat Kami,</p>
-          <p class="mb-0">{{ $kepala->name }}</p>
-          <p class="text-muted">Kepala Puskesmas Ujoh Bilang</p>
-        @else
-          <p>Data Kepala Puskesmas belum tersedia.</p>
-        @endif
-      </div>
-    </section>
-
-    <!-- Tupoksi -->
-    <section class="mb-5" data-aos="fade-right" data-aos-duration="1000">
-      <h2 class="section-title">Tugas Pokok & Fungsi (Tupoksi)</h2>
-      <div class="card shadow-sm border-0 p-4">
-        @if($profile)
-          {!! $profile->tupoksi !!}
-        @else
-          <p>Data Tupoksi belum tersedia.</p>
-        @endif
-      </div>
-    </section>
-
-    <!-- Visi & Misi -->
-    <section class="mb-5" data-aos="fade-left" data-aos-duration="1000">
-      <h2 class="section-title">Visi & Misi</h2>
-      <div class="row g-4">
-        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
-          <div class="card shadow-sm border-0 p-4 h-100">
-            <h5 class="fw-bold">Visi</h5>
-            <p>{!! $profile ? $profile->visi : 'Belum ada data visi.' !!}</p>
-          </div>
-        </div>
-        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
-          <div class="card shadow-sm border-0 p-4 h-100">
-            <h5 class="fw-bold">Misi</h5>
-            @if($profile)
-              {!! $profile->misi !!}
-            @else
-              <p>Belum ada data misi.</p>
-            @endif
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Personil -->
-    <section class="mb-5">
-      <h2 class="section-title text-center">Personil Puskesmas</h2>
+      <h2 class="section-title">Informasi Kontak</h2>
       <div class="row g-4 justify-content-center">
-        @forelse($personil as $p)
-          <div class="col-md-3 col-sm-6" data-aos="flip-left" data-aos-duration="1000">
-            <div class="card shadow-sm border-0 h-100 text-center p-3">
-              <img src="{{ $p->image_path ? '/'.$p->image_path : 'https://via.placeholder.com/100' }}" 
-                   class="rounded-circle mx-auto mb-3" 
-                   alt="{{ $p->name }}" 
-                   width="100" height="100">
-              <h6 class="fw-bold mb-1">{{ $p->name }}</h6>
-              <p class="text-muted mb-0">{{ $p->jabatan }}</p>
-            </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card contact-card shadow-sm border-0 p-4 text-center h-100">
+            <i class="bi bi-telephone-fill contact-icon"></i>
+            <h5 class="fw-bold">Telepon</h5>
+            <p class="mb-0">{{ $contact->phone ?? 'Belum tersedia' }}</p>
           </div>
-        @empty
-          <p class="text-center">Belum ada data personil.</p>
-        @endforelse
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card contact-card shadow-sm border-0 p-4 text-center h-100">
+            <i class="bi bi-envelope-fill contact-icon"></i>
+            <h5 class="fw-bold">Email</h5>
+            <p class="mb-0">
+              @if(!empty($contact->email))
+                <a href="mailto:{{ $contact->email }}" class="text-decoration-none text-success">{{ $contact->email }}</a>
+              @else
+                Belum tersedia
+              @endif
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+          <div class="card contact-card shadow-sm border-0 p-4 text-center h-100">
+            <i class="bi bi-facebook contact-icon"></i>
+            <h5 class="fw-bold">Facebook</h5>
+            <p class="mb-0">
+              @if(!empty($contact->facebook))
+                <a href="{{ $contact->facebook }}" target="_blank" class="text-decoration-none text-success">Kunjungi Halaman</a>
+              @else
+                Belum tersedia
+              @endif
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
+          <div class="card contact-card shadow-sm border-0 p-4 text-center h-100">
+            <i class="bi bi-instagram contact-icon"></i>
+            <h5 class="fw-bold">Instagram</h5>
+            <p class="mb-0">
+              @if(!empty($contact->instagram))
+                <a href="{{ $contact->instagram }}" target="_blank" class="text-decoration-none text-success">Lihat Akun</a>
+              @else
+                Belum tersedia
+              @endif
+            </p>
+          </div>
+        </div>
       </div>
     </section>
+
   </div>
 
   <footer>

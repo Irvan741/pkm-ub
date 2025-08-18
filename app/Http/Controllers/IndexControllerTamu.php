@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Berita;
 use App\Models\Agenda;
+use App\Models\Contact; // tambahin model Contact
 
 class IndexControllerTamu extends Controller
 {
@@ -25,8 +26,15 @@ class IndexControllerTamu extends Controller
     }
 
 
-    public function detailPost($slug){
+    public function detailPost($slug)
+    {
         $berita = Berita::where('slug', $slug)->first();
         return view('detail-post', compact('berita'));
+    }
+
+    public function kontak()
+    {
+        $contact = Contact::first(); // karena cuma 1 row
+        return view('kontak-kami', compact('contact'));
     }
 }

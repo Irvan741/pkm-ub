@@ -100,9 +100,6 @@
         <a href="{{ route('admin.user-role.index') }}" class="{{ request()->routeIs('admin.user-role.*') ? 'active' : '' }}">
           <i class="bi bi-people"></i><span>Account Manager</span>
         </a>
-        {{-- <a href="{{ route('admin.kartu-keluarga.index') }}" class="{{ request()->routeIs('admin.kartu-keluarga.*') ? 'active' : '' }}">
-          <i class="bi bi-card-list"></i><span>Kartu Keluarga</span>
-        </a> --}}
         <a href="{{ route('admin.agenda.index') }}" class="{{ request()->routeIs('admin.agenda.*') ? 'active' : '' }}">
           <i class="bi bi-calendar-event"></i><span>Agenda</span>
         </a>
@@ -115,6 +112,10 @@
         <a href="{{ route('admin.profile.index') }}" class="{{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
           <i class="bi bi-globe"></i><span>Web Profile</span>
         </a>
+        <!-- Contact Setting -->
+        <a href="{{ route('admin.contact.index') }}" class="{{ request()->routeIs('admin.contact.*') ? 'active' : '' }}">
+          <i class="bi bi-telephone"></i><span>Contact Setting</span>
+        </a>
       </div>
     </div>
 
@@ -126,9 +127,6 @@
       <a href="{{ route('admin.user-role.index') }}" class="{{ request()->routeIs('admin.user-role.*') ? 'active' : '' }}">
         <i class="bi bi-people"></i><span>Account Manager</span>
       </a>
-      {{-- <a href="{{ route('admin.kartu-keluarga.index') }}" class="{{ request()->routeIs('admin.kartu-keluarga.*') ? 'active' : '' }}">
-        <i class="bi bi-card-list"></i><span>Kartu Keluarga</span>
-      </a> --}}
       <a href="{{ route('admin.agenda.index') }}" class="{{ request()->routeIs('admin.agenda.*') ? 'active' : '' }}">
         <i class="bi bi-calendar-event"></i><span>Agenda</span>
       </a>
@@ -141,7 +139,12 @@
       <a href="{{ route('admin.profile.index') }}" class="{{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
         <i class="bi bi-globe"></i><span>Web Profile</span>
       </a>
+      <!-- Contact Setting -->
+      <a href="{{ route('admin.contact.index') }}" class="{{ request()->routeIs('admin.contact.*') ? 'active' : '' }}">
+        <i class="bi bi-telephone"></i><span>Contact Setting</span>
+      </a>
     </div>
+
 
     <!-- Content -->
     <main class="content">
