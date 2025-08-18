@@ -77,7 +77,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a href="{{ url('/profile') }}" class="nav-link">Profil</a></li>
           <li class="nav-item"><a href="{{ url('/agenda') }}" class="nav-link">Agenda</a></li>
-          <li class="nav-item"><a href="{{ url('/berita') }}" class="nav-link">Informasi & Berita</a></li>
+          <li class="nav-item"><a href="{{ url('/isu-kesehatan') }}" class="nav-link">Informasi & Berita</a></li>
           <li class="nav-item"><a href="{{ url('/survey') }}" class="nav-link">Survey Kepuasan</a></li>
           <li class="nav-item"><a href="{{ url('/kontak-kami') }}" class="nav-link active">Kontak Kami</a></li>
         </ul>
